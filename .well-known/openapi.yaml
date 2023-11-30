@@ -1,0 +1,66 @@
+openapi: 3.0.1
+info:
+    title: 想看电影
+    description: 功能强大的电影搜索引擎，只要输入你想要看的电影名称，就能展示给你非常棒的搜索结果，并且能推荐更多更好看的电影资源。
+    version: "v1"
+servers:
+    - url: http://127.0.0.1:8081
+paths:
+    /search_word:
+        post:
+            operationId: searchWord
+            summary: 搜索查询指定的电影名
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/searchWord"
+            responses:
+                "200":
+                    description: 搜索结果
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/messageResponse"
+    /get_code:
+        post:
+            operationId: getCode
+            summary: 获取用户选择的电影名称标题
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/getCode"
+            responses:
+                "200":
+                    description: 搜索结果
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/messageResponse"
+components:
+    schemas:
+        searchWord:
+            type: object
+            required: [word]
+            properties:
+                word:
+                    type: string
+                    description: 请输入想看的电影名称
+        getCode:
+            type: object
+            required: [word]
+            properties:
+                word:
+                    type: string
+                    description: 获取用户选择的电影名称
+        messageResponse:
+            type: object
+            required: [message]
+            properties:
+                message:
+                    type: string
+                    description: 回复信息
+        

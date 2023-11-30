@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "想看电影_ghy",
+    "name_for_model": "movie_ghy",
+    "description_for_human": "功能强大的电影搜索引擎，只要输入你想要看的电影名称，就能展示给你非常棒的搜索结果，并且能推荐更多更好看的电影资源",
+    "description_for_model": "帮助用户快速搜索并关联到想要看的电影，并且提供一个搜索结果的列表，当用户选择自己想看的电影选项，就能得到对应的电影资源",
+    "auth": {
+        "type": "none"
+    },
+    "api":{
+        "type": "openapi",
+        "url": "http://127.0.0.1:8081/.well-known/openapi.yaml"
+    },
+    "logo_url": "http://127.0.0.1:8081/logo.png",
+    "contact_email": "support@example.com",
+    "legal_info_url": "http://www.example.com/legal"
+}
